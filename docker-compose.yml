@@ -17,6 +17,7 @@ services:
       - 8000:8000
     volumes:
       - ${PROJECT_PATH}:/work
+      - ./docker/ash:/etc/profile.d
       - ./logs:/var/log/php
     working_dir: /work
 
