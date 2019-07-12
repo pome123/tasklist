@@ -13,8 +13,11 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+
+        // tasksテーブルを作成
         Schema::create('tasks', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->timestamps();
         });
     }

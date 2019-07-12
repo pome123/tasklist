@@ -17,6 +17,7 @@
                 <label for="task" class="col-sm-3 control-label">Task</label>
 
                 <div class="col-sm-6">
+                    {{-- 入力ホーム　name="name"がweb.phpのタスク作成のnameと同じ--}}
                     <input type="text" name="name" id="task-name" class="form-control">
                 </div>
             </div>
