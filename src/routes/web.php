@@ -16,7 +16,14 @@ use Illuminate\Http\Request; // 下記のRequestの部分と一致
 
 // ルーターから受け取った
 Route::get('/', function () { // ::=static
-    return view('tasks');
+    // タスクをデータベースから持ってくる orderBy=並べ換え
+    $tasks = Task::orderBy('created_at', 'asc')->get();
+
+    // データベースから取ってきた値をtasksに格納
+    return view('tasks', [
+        // tasksという名前で持ってきたtasksの値を渡す
+        'tasks' => $tasks
+    ]);
 });
 
 // タスクを追加した時にデータを送る処理
